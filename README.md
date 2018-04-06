@@ -15,7 +15,7 @@ V1 - Still in development
 1 - Can only encrypt files up to 4GB.<br/>
 
 # Cost?
-<b>Free For <s>Now</s>r</b><br/>
+<b>Free For Now</b><br/>
 # Important Info! READ!
 ## When Updating!
 When updating make unencrypted copies as updates will have a different more secure encryption method.<br/>
@@ -29,12 +29,13 @@ I am not able to recover passwords and infomation that have been saved to the en
 
 ### Encription Types
 <b>
-AES-256 encryption
-CBC mode
-Password stretching with PBKDF2
-Password salting
-Random IV
-Encrypt-then-hash HMAC</b>
+AES-256 encryption<br/>
+CBC mode<br/>
+Password stretching with PBKDF2<br/>
+Password salting<br/>
+Random IV<br/>
+Encrypt-then-hash HMAC<br/>
+</b>
 
 
 ## XCODE 9.3 using Swift 4.1
