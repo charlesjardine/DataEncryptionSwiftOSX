@@ -637,7 +637,7 @@
 				EC3BEEC12074C45D00E81DC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		EC3BEEC22074C45D00E81DC9 /* Build configuration list for PBXNativeTarget "Data Encription" */ = {
 			isa = XCConfigurationList;
@@ -646,7 +646,7 @@
 				EC3BEEC42074C45D00E81DC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		EC3BEEC52074C45D00E81DC9 /* Build configuration list for PBXNativeTarget "Data EncriptionTests" */ = {
 			isa = XCConfigurationList;
@@ -655,7 +655,7 @@
 				EC3BEEC72074C45D00E81DC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		EC3BEEC82074C45D00E81DC9 /* Build configuration list for PBXNativeTarget "Data EncriptionUITests" */ = {
 			isa = XCConfigurationList;
@@ -664,7 +664,7 @@
 				EC3BEECA2074C45D00E81DC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

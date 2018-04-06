@@ -50,7 +50,3 @@ Probably not backward compatible to swift 3
 3. In the root folder of your cloned repo $sudo pod init
 4. In the root folder of your cloned repo $sudo pod install
 5. In XCODE open the workspace project file. <b>NOT the project file!</b>
-
-
-
-
