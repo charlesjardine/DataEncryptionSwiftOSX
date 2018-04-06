@@ -4,7 +4,7 @@
 //
 //  Created by Charles Jardine on 04/04/2018.
 //  Copyright © 2018 Charles Jardine. All rights reserved.
-//  Update GIT
+//  Update public GIT Repo at https://github.com/charlesjardine/DataEncryptionSwiftOSX.git
 
 import Cocoa
 
