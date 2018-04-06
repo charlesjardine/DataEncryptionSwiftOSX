@@ -40,7 +40,7 @@ Encrypt-then-hash HMAC<br/>
 ## XCODE 9.3 using Swift 4.1
 Probably not backward compatible to swift 3
 
-##Installation
+### Installation
 
 1. Clone the repo to your local system
 2. Install pods from the terminal $ sudo gem install cocoapods
