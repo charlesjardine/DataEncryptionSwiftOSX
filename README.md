@@ -1,7 +1,7 @@
 #  MAC OSX Data Encription
 # What is it?
 This is an encryption program that allows its users to save open and edit their important files without having pay anything for encryption. <br/>
-Data Encryption is a free encryption program that encrypts any files for free.
+Data Encryption is a free encryption program that encrypts any files.
 
 # Versions
 ## Downlaod Links
@@ -37,8 +37,17 @@ Random IV<br/>
 Encrypt-then-hash HMAC<br/>
 </b>
 
-
 ## XCODE 9.3 using Swift 4.1
 Probably not backward compatible to swift 3
+
+##Installation
+
+1. Clone the repo to your local system
+2. Install pods from the terminal $ sudo gem install cocoapods
+3. In the root folder of your cloned repo $sudo pod init
+4. In the root folder of your cloned repo $sudo pod install
+5. In XCODE open the workspace project file. <b>NOT the project file!</b>
+
+
 
 
