@@ -4,7 +4,7 @@ This is an encryption program that allows its users to save open and edit their 
 <br/>
 Data Encryption is a free encryption program that encrypts any files.<br/>
 
-![Optional Text](../master/DataEncryptionSwiftOSX/EncriptData/Images/DataEncryption.png)
+![Screenshot](screenshot.png)
 
 # Versions
 ## Downlaod Links
