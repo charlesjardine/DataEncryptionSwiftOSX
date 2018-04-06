@@ -27,3 +27,4 @@ I am not able to recover passwords and infomation that have been saved to the en
 1. RNCryptor https://github.com/RNCryptor/RNCryptor for more info
 
 ## XCODE 9.3 using Swift 4.1
+
