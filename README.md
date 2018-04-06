@@ -23,3 +23,7 @@ This is a volitial project.<br/>
 We are not responsable for any loss of infomation or damage caused by this program. Use at your own risk.<br/>
 I am not able to recover passwords and infomation that have been saved to the encrypted file.<br/> 
 
+## Libs used
+1. RNCryptor https://github.com/RNCryptor/RNCryptor for more info
+
+## XCODE 9.3 using Swift 4.1
