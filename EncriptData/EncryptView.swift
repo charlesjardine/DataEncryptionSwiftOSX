@@ -52,7 +52,7 @@ class EncryptView: NSView {
     
     func AddBackGroundView()
     {
-        imageView = NSImageView(frame: CGRect(x:20,y:20,width:self.bounds.width - 40,height:self.bounds.height-40));
+        imageView = NSImageView(frame: CGRect(x:30,y:40,width:self.bounds.width-60,height:self.bounds.height-60));
         imageView.removeFromSuperview()
         var image:NSImage!
         let name = NSImage.Name("dropfiles")
@@ -60,6 +60,7 @@ class EncryptView: NSView {
         imageView.image = image;
         addSubview(imageView)
     }
+    
     func RemoveBackGroundView()
     {
         imageView.removeFromSuperview()
