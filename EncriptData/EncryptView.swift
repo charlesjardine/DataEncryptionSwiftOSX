@@ -19,6 +19,7 @@ class EncryptView: NSView {
     var cBackground = NSColor.black
     var cTextColour = NSColor.systemGreen
     var isMoving = false
+    var isBusy = false
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -102,6 +103,11 @@ class EncryptView: NSView {
     
     override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
         
+        if(isBusy)
+        {
+           return NSDragOperation()
+        }
+        
         RemoveBackGroundView()
         GetMimeTypes()
         
@@ -131,11 +137,14 @@ class EncryptView: NSView {
     }
     
     override func draggingExited(_ sender: NSDraggingInfo?) {
-        self.layer?.backgroundColor = NSColor.gray.cgColor
-        cTextColour = .systemGreen
-        labelText = "Drag Files Here to Encrypt"
-        AddLabel()
-        AddBackGroundView()
+        if(!isBusy)
+        {
+            self.layer?.backgroundColor = NSColor.gray.cgColor
+            cTextColour = .systemGreen
+            labelText = "Drag Files Here to Encrypt"
+            AddLabel()
+            AddBackGroundView()
+        }
     }
     
     override func draggingEnded(_ sender: NSDraggingInfo) {
@@ -145,11 +154,31 @@ class EncryptView: NSView {
     
     
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
+       
+        if(isBusy)
+        {
+            return false
+        }
+        
         guard let pasteboard = sender.draggingPasteboard().propertyList(forType: NSPasteboard.PasteboardType(rawValue: "NSFilenamesPboardType")) as? NSArray,
             let path = pasteboard[0] as? String
             else {
                 return false
             }
+        
+        let fSize = sizeForLocalFilePath(filePath: path)
+        if(fSize >= 4198379262)
+        {
+            let result = dialogOK(question: "File Size", text: "File size is too large to encrypt! Limit is 4GB or less")
+            if(result)
+            {
+                self.labelText = "Drag Files Here to Encrypt"
+                self.AddLabel()
+                self.AddBackGroundView()
+                return false
+            }
+        }
+        isBusy = true;
         
         //GET YOUR FILE PATH !!!
         let saveFile = path + ".enc"
@@ -198,6 +227,7 @@ class EncryptView: NSView {
                         self.labelText = "Drag Files Here to Encrypt"
                         self.AddLabel()
                         self.AddBackGroundView()
+                        self.isBusy = false
                 }
         }
         
@@ -224,6 +254,30 @@ class EncryptView: NSView {
             return ""
         }
     }
+    
+    func sizeForLocalFilePath(filePath:String) -> UInt64 {
+        do {
+            let fileAttributes = try FileManager.default.attributesOfItem(atPath: filePath)
+            if let fileSize = fileAttributes[FileAttributeKey.size]  {
+                return (fileSize as! NSNumber).uint64Value
+            } else {
+                print("Failed to get a size attribute from path: \(filePath)")
+            }
+        } catch {
+            print("Failed to get file attributes for local path: \(filePath) with error: \(error)")
+        }
+        return 0
+    }
+    
+    func dialogOK(question: String, text: String) -> Bool {
+        let alert = NSAlert()
+        alert.messageText = question
+        alert.informativeText = text
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "OK")
+        return alert.runModal() == .alertFirstButtonReturn
+    }
+
 }
 
 

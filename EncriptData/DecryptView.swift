@@ -19,6 +19,7 @@ class DecryptView: NSView {
     var cBackground = NSColor.black
     var cTextColour = NSColor.systemGreen
     var isMoving = false
+    var isBusy = false
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -94,6 +95,11 @@ class DecryptView: NSView {
     }
     
     override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
+        if(isBusy)
+        {
+            return NSDragOperation()
+        }
+        
         RemoveBackGroundView()
         if checkExtension(sender) == true {
             self.layer?.backgroundColor = NSColor.blue.cgColor
@@ -122,11 +128,14 @@ class DecryptView: NSView {
     }
     
     override func draggingExited(_ sender: NSDraggingInfo?) {
-        self.layer?.backgroundColor = NSColor.gray.cgColor
-        cTextColour = .systemGreen
-        labelText = "Drag Files Here to Decrypt"
-        AddLabel()
-        AddBackGroundView()
+        if(!isBusy)
+        {
+            self.layer?.backgroundColor = NSColor.gray.cgColor
+            cTextColour = .systemGreen
+            labelText = "Drag Files Here to Decrypt"
+            AddLabel()
+            AddBackGroundView()
+        }
     }
     
     override func draggingEnded(_ sender: NSDraggingInfo) {
@@ -134,9 +143,16 @@ class DecryptView: NSView {
     }
     
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
+        if(isBusy)
+        {
+            return false
+        }
+        
         guard let pasteboard = sender.draggingPasteboard().propertyList(forType: NSPasteboard.PasteboardType(rawValue: "NSFilenamesPboardType")) as? NSArray,
             let path = pasteboard[0] as? String
             else { return false }
+        
+        isBusy = true;
         
         //GET YOUR FILE PATH !!!
         var saveFile = path 
@@ -201,6 +217,7 @@ class DecryptView: NSView {
                     self.labelText = "Drag Files Here to Decrypt"
                     self.AddLabel()
                     self.AddBackGroundView()
+                    self.isBusy = false
                 }
         }
 
