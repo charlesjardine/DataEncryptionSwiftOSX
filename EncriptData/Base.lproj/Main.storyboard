@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Application-->
+        <scene sceneID="JPo-4y-FX3">
+            <objects>
+                <application id="hnw-xV-0zn" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
+                        <items>
+                            <menuItem title="Data Encription" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Data Encription" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="About Data Encription" id="5kV-Vb-QxS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
+                                        <menuItem title="Hide Data Encription" keyEquivalent="h" id="Olw-nP-bQN">
+                                            <connections>
+                                                <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="VT4-aY-XCT"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show All" id="Kd2-mp-pUS">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="Dhg-Le-xox"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                                        <menuItem title="Quit Data Encription" keyEquivalent="q" id="4sb-4s-VLi">
+                                            <connections>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Settings" id="O7j-W5-lbA">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Settings" id="nzU-Eu-8Jf">
+                                    <items>
+                                        <menuItem title="File Extentions" id="i5K-Os-POk">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <segue destination="c2X-gO-IVk" kind="modal" id="PIp-2d-Dqi"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Help" id="wpr-3q-Mcd">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
+                                    <items>
+                                        <menuItem title="Data Encription Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                            <connections>
+                                                <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
+                    </connections>
+                </application>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Data_Encription" customModuleProvider="target"/>
+                <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+                <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="0.0"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="R2V-B0-nI4">
+            <objects>
+                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                    <window key="window" title="Data Encription" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <connections>
+                            <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                    </connections>
+                </windowController>
+                <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="250"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hIz-AP-VOD">
+            <objects>
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Data_Encription" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r1Z-Ze-Ptp">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <subviews>
+                                    <customView fixedFrame="YES" id="Q7d-72-VvY" customClass="EncryptView" customModule="Data_Encription" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="233" height="270"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </customView>
+                                    <customView fixedFrame="YES" id="Ofh-Oj-Nfb" customClass="DecryptView" customModule="Data_Encription" customModuleProvider="target">
+                                        <rect key="frame" x="243" y="0.0" width="237" height="270"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </customView>
+                                </subviews>
+                                <holdingPriorities>
+                                    <real value="250"/>
+                                    <real value="250"/>
+                                </holdingPriorities>
+                            </splitView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="r1Z-Ze-Ptp" secondAttribute="bottom" id="3MT-Q5-Sfe"/>
+                            <constraint firstAttribute="trailing" secondItem="r1Z-Ze-Ptp" secondAttribute="trailing" id="8T5-dg-F2c"/>
+                            <constraint firstItem="r1Z-Ze-Ptp" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="ekn-0Y-8fC"/>
+                            <constraint firstItem="r1Z-Ze-Ptp" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="jW1-XR-3RY"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="655"/>
+        </scene>
+        <!--Update Ext View Controller-->
+        <scene sceneID="oUg-fr-X4P">
+            <objects>
+                <viewController id="c2X-gO-IVk" customClass="UpdateExtViewController" customModule="Data_Encription" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="3lK-jx-t0Y">
+                        <rect key="frame" x="0.0" y="0.0" width="550" height="481"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="QeZ-ac-ShA">
+                                <rect key="frame" x="0.0" y="0.0" width="550" height="48"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="a6t-NL-Yys">
+                                        <rect key="frame" x="212" y="6" width="128" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Add New Type" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="yhF-1d-cRj">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="btnClose:" target="c2X-gO-IVk" id="0pq-va-kQW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="a6t-NL-Yys" firstAttribute="top" secondItem="QeZ-ac-ShA" secondAttribute="top" constant="14" id="Msa-Pj-2B1"/>
+                                    <constraint firstItem="a6t-NL-Yys" firstAttribute="centerY" secondItem="QeZ-ac-ShA" secondAttribute="centerY" id="aZT-jb-I2D"/>
+                                    <constraint firstItem="a6t-NL-Yys" firstAttribute="centerX" secondItem="QeZ-ac-ShA" secondAttribute="centerX" id="zbk-8L-Wwr"/>
+                                </constraints>
+                            </customView>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERI-eG-QGb">
+                                <rect key="frame" x="0.0" y="46" width="550" height="435"/>
+                                <clipView key="contentView" id="hiZ-Up-Jiz">
+                                    <rect key="frame" x="1" y="0.0" width="548" height="434"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="slm-Of-dgN" id="9ao-aE-5eL">
+                                            <rect key="frame" x="0.0" y="0.0" width="548" height="411"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <size key="intercellSpacing" width="3" height="2"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn identifier="" width="116" minWidth="40" maxWidth="1000" id="CyY-Yi-Boq">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Extention">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="sGf-y1-n5X">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        <connections>
+                                                            <binding destination="u7u-Ij-9fV" name="value" keyPath="selection.key" id="NiT-kd-P5I"/>
+                                                        </connections>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <connections>
+                                                        <binding destination="u7u-Ij-9fV" name="value" keyPath="arrangedObjects.key" id="6wO-3V-RnI"/>
+                                                    </connections>
+                                                </tableColumn>
+                                                <tableColumn identifier="" width="426" minWidth="40" maxWidth="1000" id="RZ1-ZY-4eg">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Description">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="Y5d-Y1-IUQ">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        <connections>
+                                                            <binding destination="u7u-Ij-9fV" name="value" keyPath="selection.value" id="Syu-Jv-nQf"/>
+                                                        </connections>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <connections>
+                                                        <binding destination="u7u-Ij-9fV" name="value" keyPath="arrangedObjects.value" id="1aA-5B-l5Y"/>
+                                                    </connections>
+                                                </tableColumn>
+                                            </tableColumns>
+                                            <connections>
+                                                <binding destination="u7u-Ij-9fV" name="content" keyPath="arrangedObjects" id="x6A-9Q-nlO"/>
+                                                <outlet property="dataSource" destination="ERI-eG-QGb" id="Rae-vC-PRH"/>
+                                            </connections>
+                                        </tableView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="jfx-SV-vxw">
+                                    <rect key="frame" x="1" y="418" width="539" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="cum-BZ-WwY">
+                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <tableHeaderView key="headerView" id="slm-Of-dgN">
+                                    <rect key="frame" x="0.0" y="0.0" width="548" height="23"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableHeaderView>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="QeZ-ac-ShA" secondAttribute="trailing" id="2WN-kJ-FPh"/>
+                            <constraint firstAttribute="bottom" secondItem="ERI-eG-QGb" secondAttribute="bottom" constant="46" id="3Du-6M-B85"/>
+                            <constraint firstAttribute="bottom" secondItem="QeZ-ac-ShA" secondAttribute="bottom" id="3nD-Xs-qTJ"/>
+                            <constraint firstItem="ERI-eG-QGb" firstAttribute="top" secondItem="3lK-jx-t0Y" secondAttribute="top" id="6Vh-cO-KDl"/>
+                            <constraint firstAttribute="trailing" secondItem="ERI-eG-QGb" secondAttribute="trailing" id="Lte-dM-b6j"/>
+                            <constraint firstItem="ERI-eG-QGb" firstAttribute="leading" secondItem="3lK-jx-t0Y" secondAttribute="leading" id="bNb-Hf-CJI"/>
+                            <constraint firstItem="QeZ-ac-ShA" firstAttribute="leading" secondItem="3lK-jx-t0Y" secondAttribute="leading" id="yOI-h4-Pmh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="plistAC" destination="u7u-Ij-9fV" id="a3F-Kd-0wk"/>
+                        <outlet property="tablView" destination="9ao-aE-5eL" id="gkP-qI-pjy"/>
+                    </connections>
+                </viewController>
+                <customObject id="G9h-Qj-j0A" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <arrayController objectClassName="PlistData" id="u7u-Ij-9fV"/>
+            </objects>
+            <point key="canvasLocation" x="811" y="491.5"/>
+        </scene>
+    </scenes>
+</document>

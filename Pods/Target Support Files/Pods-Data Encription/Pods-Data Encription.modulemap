@@ -1,0 +1,6 @@
+framework module Pods_Data_Encription {
+  umbrella header "Pods-Data Encription-umbrella.h"
+
+  export *
+  module * { export * }
+}
