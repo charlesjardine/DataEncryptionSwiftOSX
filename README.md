@@ -1,6 +1,7 @@
 #  MAC OSX Data Encription
 # What is it?
 This is an encryption program that allows its users to save open and edit their important files without having pay anything for encryption. <br/>
+<br/>
 Data Encryption is a free encryption program that encrypts any files.
 
 # Versions
