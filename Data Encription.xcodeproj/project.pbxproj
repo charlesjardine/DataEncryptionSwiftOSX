@@ -52,6 +52,7 @@
 		EC0BAB812076DA26006ABEED /* UpdateExtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateExtViewController.swift; sourceTree = "<group>"; };
 		EC0BAB832076DD1F006ABEED /* PlistData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistData.swift; sourceTree = "<group>"; };
 		EC0BAB852076F11D006ABEED /* Mime.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Mime.plist; sourceTree = "<group>"; };
+		EC0BAB872077584F006ABEED /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EC3BEE9C2074C45D00E81DC9 /* Data Encription.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Data Encription.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC3BEE9F2074C45D00E81DC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC3BEEA12074C45D00E81DC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 		EC3BEE932074C45D00E81DC9 = {
 			isa = PBXGroup;
 			children = (
+				EC0BAB872077584F006ABEED /* README.md */,
 				EC3BEE9E2074C45D00E81DC9 /* EncriptData */,
 				EC3BEE9D2074C45D00E81DC9 /* Products */,
 				ECFFA8E62074E6AB0027E0A9 /* Frameworks */,
