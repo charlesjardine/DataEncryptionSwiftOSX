@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1D2E5D1635AD9A1A97247249 /* Pods_Data_Encription.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 588C3826343FF76C152DE93F /* Pods_Data_Encription.framework */; };
-		B7A55D2860C54C4EB3C3C7C8 /* Pods_EncriptData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 256616F5D4F4EDE223BA7A22 /* Pods_EncriptData.framework */; };
 		EC081B5A20750F01000B73C1 /* RNCryptor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC081B5920750F01000B73C1 /* RNCryptor.framework */; };
 		EC0BAB822076DA26006ABEED /* UpdateExtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0BAB812076DA26006ABEED /* UpdateExtViewController.swift */; };
 		EC0BAB842076DD1F006ABEED /* PlistData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0BAB832076DD1F006ABEED /* PlistData.swift */; };
@@ -77,7 +76,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC081B5A20750F01000B73C1 /* RNCryptor.framework in Frameworks */,
-				B7A55D2860C54C4EB3C3C7C8 /* Pods_EncriptData.framework in Frameworks */,
 				1D2E5D1635AD9A1A97247249 /* Pods_Data_Encription.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
