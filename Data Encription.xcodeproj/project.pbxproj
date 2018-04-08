@@ -21,6 +21,8 @@
 		EC569D502076AEC5001D0018 /* Plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC569D4F2076AEC5001D0018 /* Plist.swift */; };
 		ECE0E80020765B0F0075DEAE /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE0E7FF20765B0F0075DEAE /* MimeType.swift */; };
 		ECED59E720766FC30083EFAA /* DecryptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFFA8E42074C99F0027E0A9 /* DecryptView.swift */; };
+		ECFE8B11207AA8A2008C2D23 /* EncriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE8B10207AA8A2008C2D23 /* EncriptionViewController.swift */; };
+		ECFE8B13207ABD78008C2D23 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE8B12207ABD78008C2D23 /* EventMonitor.swift */; };
 		ECFFA8E32074C8FC0027E0A9 /* EncryptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFFA8E22074C8FC0027E0A9 /* EncryptView.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,8 @@
 		EC3EF49C20766A2B0016FA1B /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		EC569D4F2076AEC5001D0018 /* Plist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plist.swift; sourceTree = "<group>"; };
 		ECE0E7FF20765B0F0075DEAE /* MimeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
+		ECFE8B10207AA8A2008C2D23 /* EncriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncriptionViewController.swift; sourceTree = "<group>"; };
+		ECFE8B12207ABD78008C2D23 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		ECFFA8E22074C8FC0027E0A9 /* EncryptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptView.swift; sourceTree = "<group>"; };
 		ECFFA8E42074C99F0027E0A9 /* DecryptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecryptView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,22 +137,40 @@
 		EC3BEE9E2074C45D00E81DC9 /* EncriptData */ = {
 			isa = PBXGroup;
 			children = (
+				ECFE8B0F207AA57A008C2D23 /* Views */,
+				ECFE8B0E207AA562008C2D23 /* ViewControllers */,
 				EC3EF49C20766A2B0016FA1B /* Images */,
 				EC3BEE9F2074C45D00E81DC9 /* AppDelegate.swift */,
-				EC3BEEA12074C45D00E81DC9 /* ViewController.swift */,
 				EC3BEEA32074C45D00E81DC9 /* Assets.xcassets */,
 				EC3BEEA52074C45D00E81DC9 /* Main.storyboard */,
 				EC3BEEA82074C45D00E81DC9 /* Info.plist */,
 				EC3BEEA92074C45D00E81DC9 /* EncriptData.entitlements */,
-				ECFFA8E22074C8FC0027E0A9 /* EncryptView.swift */,
-				ECFFA8E42074C99F0027E0A9 /* DecryptView.swift */,
 				ECE0E7FF20765B0F0075DEAE /* MimeType.swift */,
 				EC569D4F2076AEC5001D0018 /* Plist.swift */,
-				EC0BAB812076DA26006ABEED /* UpdateExtViewController.swift */,
 				EC0BAB832076DD1F006ABEED /* PlistData.swift */,
 				EC0BAB8C20779D13006ABEED /* Mime.plist */,
+				ECFE8B12207ABD78008C2D23 /* EventMonitor.swift */,
 			);
 			path = EncriptData;
+			sourceTree = "<group>";
+		};
+		ECFE8B0E207AA562008C2D23 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EC3BEEA12074C45D00E81DC9 /* ViewController.swift */,
+				EC0BAB812076DA26006ABEED /* UpdateExtViewController.swift */,
+				ECFE8B10207AA8A2008C2D23 /* EncriptionViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ECFE8B0F207AA57A008C2D23 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ECFFA8E22074C8FC0027E0A9 /* EncryptView.swift */,
+				ECFFA8E42074C99F0027E0A9 /* DecryptView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		ECFFA8E62074E6AB0027E0A9 /* Frameworks */ = {
@@ -360,8 +382,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC0BAB842076DD1F006ABEED /* PlistData.swift in Sources */,
+				ECFE8B13207ABD78008C2D23 /* EventMonitor.swift in Sources */,
 				EC569D502076AEC5001D0018 /* Plist.swift in Sources */,
 				ECFFA8E32074C8FC0027E0A9 /* EncryptView.swift in Sources */,
+				ECFE8B11207AA8A2008C2D23 /* EncriptionViewController.swift in Sources */,
 				ECED59E720766FC30083EFAA /* DecryptView.swift in Sources */,
 				EC3BEEA22074C45D00E81DC9 /* ViewController.swift in Sources */,
 				EC0BAB822076DA26006ABEED /* UpdateExtViewController.swift in Sources */,
