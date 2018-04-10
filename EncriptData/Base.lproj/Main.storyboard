@@ -181,13 +181,116 @@
             <objects>
                 <viewController title="Show &amp; Hide Files" id="I1m-oq-gL2" sceneMemberID="viewController">
                     <view key="view" id="7Dc-8U-mYe">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="230"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Lwp-NH-qf1" customClass="HideFilesView" customModule="Data_Encription" customModuleProvider="target">
+                                <rect key="frame" x="125" y="10" width="200" height="200"/>
+                            </customView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aRS-em-y76">
+                                <rect key="frame" x="14" y="3" width="109" height="32"/>
+                                <buttonCell key="cell" type="push" title="Hidden List" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cjh-RF-uMQ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="KFu-5x-RJJ" kind="popover" popoverAnchorView="aRS-em-y76" popoverBehavior="t" preferredEdge="maxY" id="wl0-Bd-0A3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Lwp-NH-qf1" firstAttribute="leading" secondItem="aRS-em-y76" secondAttribute="trailing" constant="8" symbolic="YES" id="1aC-uO-6Ex"/>
+                            <constraint firstItem="Lwp-NH-qf1" firstAttribute="centerX" secondItem="7Dc-8U-mYe" secondAttribute="centerX" id="IK1-cW-kZa"/>
+                            <constraint firstAttribute="bottom" secondItem="Lwp-NH-qf1" secondAttribute="bottom" constant="10" id="Kur-yc-Uuo"/>
+                            <constraint firstItem="Lwp-NH-qf1" firstAttribute="leading" secondItem="7Dc-8U-mYe" secondAttribute="leading" constant="125" id="Oa6-JB-SC5"/>
+                            <constraint firstItem="aRS-em-y76" firstAttribute="bottom" secondItem="Lwp-NH-qf1" secondAttribute="bottom" id="ggl-SE-zx3"/>
+                            <constraint firstItem="Lwp-NH-qf1" firstAttribute="top" secondItem="7Dc-8U-mYe" secondAttribute="top" constant="20" symbolic="YES" id="icd-Wl-RuE"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="tgJ-kH-hZk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="737" y="1182"/>
+        </scene>
+        <!--Hidden Files Lookup View Controller-->
+        <scene sceneID="pas-sm-yhv">
+            <objects>
+                <viewController id="KFu-5x-RJJ" customClass="HiddenFilesLookupViewController" customModule="Data_Encription" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="xRC-9U-1Cg">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmX-B3-Nfp">
+                                <rect key="frame" x="20" y="35" width="415" height="245"/>
+                                <clipView key="contentView" id="3Jg-DM-kL1">
+                                    <rect key="frame" x="1" y="23" width="413" height="221"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="wgH-QG-8n8" id="dwe-ds-dID">
+                                            <rect key="frame" x="0.0" y="0.0" width="413" height="221"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <size key="intercellSpacing" width="3" height="2"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <tableViewGridLines key="gridStyleMask" dashed="YES"/>
+                                            <color key="gridColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn identifier="" width="409" minWidth="40" maxWidth="1000" id="oaV-a8-cYK">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="File Name">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" title="Text Cell" id="Zjx-aV-wTw">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        <connections>
+                                                            <binding destination="7jZ-Qk-Qz9" name="value" keyPath="selection.fileName" id="sTE-8H-9cu">
+                                                                <dictionary key="options">
+                                                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                                </dictionary>
+                                                            </binding>
+                                                        </connections>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <connections>
+                                                        <binding destination="7jZ-Qk-Qz9" name="value" keyPath="arrangedObjects.fileName" id="76I-2s-af6"/>
+                                                    </connections>
+                                                </tableColumn>
+                                            </tableColumns>
+                                        </tableView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="7n2-E4-Vd6">
+                                    <rect key="frame" x="1" y="116" width="234" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="TSC-5c-Kb4">
+                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <tableHeaderView key="headerView" id="wgH-QG-8n8">
+                                    <rect key="frame" x="0.0" y="0.0" width="413" height="23"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableHeaderView>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="dmX-B3-Nfp" firstAttribute="leading" secondItem="xRC-9U-1Cg" secondAttribute="leading" constant="20" symbolic="YES" id="836-3R-2Ef"/>
+                            <constraint firstAttribute="trailing" secondItem="dmX-B3-Nfp" secondAttribute="trailing" constant="15" id="FXC-G7-xwi"/>
+                            <constraint firstItem="dmX-B3-Nfp" firstAttribute="top" secondItem="xRC-9U-1Cg" secondAttribute="top" constant="20" symbolic="YES" id="M65-88-nDr"/>
+                            <constraint firstAttribute="bottom" secondItem="dmX-B3-Nfp" secondAttribute="bottom" constant="35" id="vpi-Hi-FnE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="filesAC" destination="7jZ-Qk-Qz9" id="mwD-yl-B36"/>
+                        <outlet property="tableView" destination="dwe-ds-dID" id="3Kf-FH-ACx"/>
+                    </connections>
+                </viewController>
+                <customObject id="2E5-Hs-N89" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <arrayController objectClassName="HiddenFilesModel" id="7jZ-Qk-Qz9"/>
+            </objects>
+            <point key="canvasLocation" x="1214" y="1219"/>
         </scene>
         <!--Encription View Controller-->
         <scene sceneID="qjk-w9-SSB">
@@ -206,9 +309,6 @@
                                         <action selector="BtnClose:" target="yjt-us-PfU" id="4Hy-pJ-YsV"/>
                                     </connections>
                                 </buttonCell>
-                                <connections>
-                                    <segue destination="c2X-gO-IVk" kind="sheet" id="q83-9j-f8d"/>
-                                </connections>
                             </button>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="on3-bN-yig" customClass="EncryptView" customModule="Data_Encription" customModuleProvider="target">
                                 <rect key="frame" x="20" y="80" width="200" height="194"/>
@@ -335,6 +435,9 @@
                                             </connections>
                                         </tableView>
                                     </subviews>
+                                    <connections>
+                                        <binding destination="u7u-Ij-9fV" name="hidden" keyPath="selection" id="f5b-cL-da6"/>
+                                    </connections>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="jfx-SV-vxw">
                                     <rect key="frame" x="1" y="418" width="539" height="16"/>
@@ -368,7 +471,7 @@
                 <customObject id="G9h-Qj-j0A" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <arrayController objectClassName="PlistData" id="u7u-Ij-9fV"/>
             </objects>
-            <point key="canvasLocation" x="1853" y="165"/>
+            <point key="canvasLocation" x="1317" y="1783"/>
         </scene>
         <!--Settings-->
         <scene sceneID="4ly-sg-aqF">
@@ -378,15 +481,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YV8-Gv-235">
-                                <rect key="frame" x="207" y="141" width="55" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Settings" id="Oxa-ae-rN0">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" red="1" green="0.4545702338" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </textFieldCell>
-                            </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BtL-0Z-ryB">
                                 <rect key="frame" x="299" y="13" width="137" height="32"/>
                                 <buttonCell key="cell" type="push" title="Quit Application" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IUi-2Z-UXG">
@@ -397,8 +491,17 @@
                                     <action selector="btnQuit:" target="PGf-7w-3VL" id="gNV-ss-FtV"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xFB-af-iNT">
+                                <rect key="frame" x="14" y="13" width="156" height="32"/>
+                                <buttonCell key="cell" type="push" title="Edit File Extentions" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mQO-zl-w8H">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="xFB-af-iNT" firstAttribute="leading" secondItem="td6-yh-BRz" secondAttribute="leading" constant="20" symbolic="YES" id="2cx-qw-s7L"/>
+                            <constraint firstItem="xFB-af-iNT" firstAttribute="baseline" secondItem="BtL-0Z-ryB" secondAttribute="baseline" id="POa-OL-b48"/>
                             <constraint firstAttribute="trailing" secondItem="BtL-0Z-ryB" secondAttribute="trailing" constant="20" id="Sdg-Tx-Kui"/>
                             <constraint firstAttribute="bottom" secondItem="BtL-0Z-ryB" secondAttribute="bottom" constant="20" id="XID-Jo-rlC"/>
                         </constraints>
@@ -406,7 +509,7 @@
                 </viewController>
                 <customObject id="KB9-m8-Ybg" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="737" y="1669"/>
+            <point key="canvasLocation" x="737" y="1573"/>
         </scene>
     </scenes>
 </document>

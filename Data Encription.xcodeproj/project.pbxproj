@@ -20,6 +20,11 @@
 		EC3EF49D20766A2B0016FA1B /* Images in Resources */ = {isa = PBXBuildFile; fileRef = EC3EF49C20766A2B0016FA1B /* Images */; };
 		EC569D502076AEC5001D0018 /* Plist.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC569D4F2076AEC5001D0018 /* Plist.swift */; };
 		ECA49261207C67AA003C90F3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA49260207C67AA003C90F3 /* SettingsViewController.swift */; };
+		ECB0B37F207CCD67002735CD /* HideFilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB0B37E207CCD67002735CD /* HideFilesView.swift */; };
+		ECB0B381207CDA58002735CD /* HiddenFiles.plist in Resources */ = {isa = PBXBuildFile; fileRef = ECB0B380207CDA58002735CD /* HiddenFiles.plist */; };
+		ECB0B383207CDAAA002735CD /* HiddenFilesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB0B382207CDAAA002735CD /* HiddenFilesModel.swift */; };
+		ECB0B387207CDCFE002735CD /* HiddenFilesPlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB0B386207CDCFE002735CD /* HiddenFilesPlist.swift */; };
+		ECB0B38B207CE367002735CD /* HiddenFilesLookupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB0B38A207CE367002735CD /* HiddenFilesLookupViewController.swift */; };
 		ECD7D1ED207B3C8A00E0C6AC /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD7D1EC207B3C8A00E0C6AC /* MainController.swift */; };
 		ECD7D1EF207B470900E0C6AC /* EncryptMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD7D1EE207B470900E0C6AC /* EncryptMasterView.swift */; };
 		ECE0E80020765B0F0075DEAE /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE0E7FF20765B0F0075DEAE /* MimeType.swift */; };
@@ -28,23 +33,6 @@
 		ECFE8B13207ABD78008C2D23 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE8B12207ABD78008C2D23 /* EventMonitor.swift */; };
 		ECFFA8E32074C8FC0027E0A9 /* EncryptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFFA8E22074C8FC0027E0A9 /* EncryptView.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		EC3BEEAF2074C45D00E81DC9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC3BEE942074C45D00E81DC9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EC3BEE9B2074C45D00E81DC9;
-			remoteInfo = EncriptData;
-		};
-		EC3BEEBA2074C45D00E81DC9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC3BEE942074C45D00E81DC9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EC3BEE9B2074C45D00E81DC9;
-			remoteInfo = EncriptData;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		256616F5D4F4EDE223BA7A22 /* Pods_EncriptData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EncriptData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,11 +54,16 @@
 		EC3BEEA62074C45D00E81DC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC3BEEA82074C45D00E81DC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC3BEEA92074C45D00E81DC9 /* EncriptData.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EncriptData.entitlements; sourceTree = "<group>"; };
-		EC3BEEAE2074C45D00E81DC9 /* Data EncriptionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Data EncriptionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC3BEEB92074C45D00E81DC9 /* Data EncriptionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Data EncriptionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC3EF49C20766A2B0016FA1B /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		EC569D4F2076AEC5001D0018 /* Plist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plist.swift; sourceTree = "<group>"; };
 		ECA49260207C67AA003C90F3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		ECB0B37A207CCAB8002735CD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		ECB0B37C207CCAC6002735CD /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		ECB0B37E207CCD67002735CD /* HideFilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideFilesView.swift; sourceTree = "<group>"; };
+		ECB0B380207CDA58002735CD /* HiddenFiles.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = HiddenFiles.plist; sourceTree = "<group>"; };
+		ECB0B382207CDAAA002735CD /* HiddenFilesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenFilesModel.swift; sourceTree = "<group>"; };
+		ECB0B386207CDCFE002735CD /* HiddenFilesPlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenFilesPlist.swift; sourceTree = "<group>"; };
+		ECB0B38A207CE367002735CD /* HiddenFilesLookupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenFilesLookupViewController.swift; sourceTree = "<group>"; };
 		ECD7D1EC207B3C8A00E0C6AC /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		ECD7D1EE207B470900E0C6AC /* EncryptMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptMasterView.swift; sourceTree = "<group>"; };
 		ECE0E7FF20765B0F0075DEAE /* MimeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
@@ -87,20 +80,6 @@
 			files = (
 				EC081B5A20750F01000B73C1 /* RNCryptor.framework in Frameworks */,
 				1D2E5D1635AD9A1A97247249 /* Pods_Data_Encription.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EC3BEEAB2074C45D00E81DC9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EC3BEEB62074C45D00E81DC9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,8 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				EC3BEE9C2074C45D00E81DC9 /* Data Encription.app */,
-				EC3BEEAE2074C45D00E81DC9 /* Data EncriptionTests.xctest */,
-				EC3BEEB92074C45D00E81DC9 /* Data EncriptionUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,6 +133,9 @@
 				EC0BAB832076DD1F006ABEED /* PlistData.swift */,
 				EC0BAB8C20779D13006ABEED /* Mime.plist */,
 				ECFE8B12207ABD78008C2D23 /* EventMonitor.swift */,
+				ECB0B380207CDA58002735CD /* HiddenFiles.plist */,
+				ECB0B382207CDAAA002735CD /* HiddenFilesModel.swift */,
+				ECB0B386207CDCFE002735CD /* HiddenFilesPlist.swift */,
 			);
 			path = EncriptData;
 			sourceTree = "<group>";
@@ -168,6 +148,7 @@
 				ECFE8B10207AA8A2008C2D23 /* EncriptionViewController.swift */,
 				ECD7D1EC207B3C8A00E0C6AC /* MainController.swift */,
 				ECA49260207C67AA003C90F3 /* SettingsViewController.swift */,
+				ECB0B38A207CE367002735CD /* HiddenFilesLookupViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -178,6 +159,7 @@
 				ECFFA8E22074C8FC0027E0A9 /* EncryptView.swift */,
 				ECFFA8E42074C99F0027E0A9 /* DecryptView.swift */,
 				ECD7D1EE207B470900E0C6AC /* EncryptMasterView.swift */,
+				ECB0B37E207CCD67002735CD /* HideFilesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +167,8 @@
 		ECFFA8E62074E6AB0027E0A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ECB0B37C207CCAC6002735CD /* ServiceManagement.framework */,
+				ECB0B37A207CCAB8002735CD /* Cocoa.framework */,
 				EC081B5920750F01000B73C1 /* RNCryptor.framework */,
 				256616F5D4F4EDE223BA7A22 /* Pods_EncriptData.framework */,
 				588C3826343FF76C152DE93F /* Pods_Data_Encription.framework */,
@@ -215,49 +199,13 @@
 			productReference = EC3BEE9C2074C45D00E81DC9 /* Data Encription.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EC3BEEAD2074C45D00E81DC9 /* Data EncriptionTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EC3BEEC52074C45D00E81DC9 /* Build configuration list for PBXNativeTarget "Data EncriptionTests" */;
-			buildPhases = (
-				EC3BEEAA2074C45D00E81DC9 /* Sources */,
-				EC3BEEAB2074C45D00E81DC9 /* Frameworks */,
-				EC3BEEAC2074C45D00E81DC9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EC3BEEB02074C45D00E81DC9 /* PBXTargetDependency */,
-			);
-			name = "Data EncriptionTests";
-			productName = EncriptDataTests;
-			productReference = EC3BEEAE2074C45D00E81DC9 /* Data EncriptionTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		EC3BEEB82074C45D00E81DC9 /* Data EncriptionUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EC3BEEC82074C45D00E81DC9 /* Build configuration list for PBXNativeTarget "Data EncriptionUITests" */;
-			buildPhases = (
-				EC3BEEB52074C45D00E81DC9 /* Sources */,
-				EC3BEEB62074C45D00E81DC9 /* Frameworks */,
-				EC3BEEB72074C45D00E81DC9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EC3BEEBB2074C45D00E81DC9 /* PBXTargetDependency */,
-			);
-			name = "Data EncriptionUITests";
-			productName = EncriptDataUITests;
-			productReference = EC3BEEB92074C45D00E81DC9 /* Data EncriptionUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		EC3BEE942074C45D00E81DC9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Charles Jardine";
 				TargetAttributes = {
@@ -269,16 +217,6 @@
 								enabled = 0;
 							};
 						};
-					};
-					EC3BEEAD2074C45D00E81DC9 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = EC3BEE9B2074C45D00E81DC9;
-					};
-					EC3BEEB82074C45D00E81DC9 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = EC3BEE9B2074C45D00E81DC9;
 					};
 				};
 			};
@@ -296,8 +234,6 @@
 			projectRoot = "";
 			targets = (
 				EC3BEE9B2074C45D00E81DC9 /* Data Encription */,
-				EC3BEEAD2074C45D00E81DC9 /* Data EncriptionTests */,
-				EC3BEEB82074C45D00E81DC9 /* Data EncriptionUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -307,25 +243,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECB0B381207CDA58002735CD /* HiddenFiles.plist in Resources */,
 				EC3BEEA42074C45D00E81DC9 /* Assets.xcassets in Resources */,
 				EC3EF49D20766A2B0016FA1B /* Images in Resources */,
 				EC3BEEA72074C45D00E81DC9 /* Main.storyboard in Resources */,
 				EC0BAB8D20779D13006ABEED /* Mime.plist in Resources */,
 				EC0BAB8B207771FF006ABEED /* screenshot.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EC3BEEAC2074C45D00E81DC9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EC3BEEB72074C45D00E81DC9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +315,9 @@
 			files = (
 				EC0BAB842076DD1F006ABEED /* PlistData.swift in Sources */,
 				ECFE8B13207ABD78008C2D23 /* EventMonitor.swift in Sources */,
+				ECB0B37F207CCD67002735CD /* HideFilesView.swift in Sources */,
 				ECD7D1EF207B470900E0C6AC /* EncryptMasterView.swift in Sources */,
+				ECB0B38B207CE367002735CD /* HiddenFilesLookupViewController.swift in Sources */,
 				EC569D502076AEC5001D0018 /* Plist.swift in Sources */,
 				ECFFA8E32074C8FC0027E0A9 /* EncryptView.swift in Sources */,
 				ECFE8B11207AA8A2008C2D23 /* EncriptionViewController.swift in Sources */,
@@ -401,39 +326,14 @@
 				ECD7D1ED207B3C8A00E0C6AC /* MainController.swift in Sources */,
 				EC0BAB822076DA26006ABEED /* UpdateExtViewController.swift in Sources */,
 				ECA49261207C67AA003C90F3 /* SettingsViewController.swift in Sources */,
+				ECB0B387207CDCFE002735CD /* HiddenFilesPlist.swift in Sources */,
+				ECB0B383207CDAAA002735CD /* HiddenFilesModel.swift in Sources */,
 				ECE0E80020765B0F0075DEAE /* MimeType.swift in Sources */,
 				EC3BEEA02074C45D00E81DC9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EC3BEEAA2074C45D00E81DC9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EC3BEEB52074C45D00E81DC9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		EC3BEEB02074C45D00E81DC9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EC3BEE9B2074C45D00E81DC9 /* Data Encription */;
-			targetProxy = EC3BEEAF2074C45D00E81DC9 /* PBXContainerItemProxy */;
-		};
-		EC3BEEBB2074C45D00E81DC9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EC3BEE9B2074C45D00E81DC9 /* Data Encription */;
-			targetProxy = EC3BEEBA2074C45D00E81DC9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EC3BEEA52074C45D00E81DC9 /* Main.storyboard */ = {
@@ -595,72 +495,6 @@
 			};
 			name = Release;
 		};
-		EC3BEEC62074C45D00E81DC9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FY35M5HHD8;
-				INFOPLIST_FILE = EncriptDataTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = nathan.EncriptDataTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Data Encription.app/Contents/MacOS/Data Encription";
-			};
-			name = Debug;
-		};
-		EC3BEEC72074C45D00E81DC9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FY35M5HHD8;
-				INFOPLIST_FILE = EncriptDataTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = nathan.EncriptDataTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Data Encription.app/Contents/MacOS/Data Encription";
-			};
-			name = Release;
-		};
-		EC3BEEC92074C45D00E81DC9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FY35M5HHD8;
-				INFOPLIST_FILE = EncriptDataUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = nathan.EncriptDataUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = EncriptData;
-			};
-			name = Debug;
-		};
-		EC3BEECA2074C45D00E81DC9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = FY35M5HHD8;
-				INFOPLIST_FILE = EncriptDataUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = nathan.EncriptDataUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = EncriptData;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -678,24 +512,6 @@
 			buildConfigurations = (
 				EC3BEEC32074C45D00E81DC9 /* Debug */,
 				EC3BEEC42074C45D00E81DC9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		EC3BEEC52074C45D00E81DC9 /* Build configuration list for PBXNativeTarget "Data EncriptionTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EC3BEEC62074C45D00E81DC9 /* Debug */,
-				EC3BEEC72074C45D00E81DC9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		EC3BEEC82074C45D00E81DC9 /* Build configuration list for PBXNativeTarget "Data EncriptionUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EC3BEEC92074C45D00E81DC9 /* Debug */,
-				EC3BEECA2074C45D00E81DC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
