@@ -28,6 +28,24 @@ class HiddenFilesPlist: NSData {
         }
     }
     
+    func RemoveFromPlist(plist: NSString, fileName: NSString, filePath: NSString)
+    {
+        var resourceFileDictionary: NSMutableDictionary?
+        if let path = Bundle.main.path(forResource: plist as String, ofType: "plist") {
+            resourceFileDictionary = NSMutableDictionary(contentsOfFile: path)
+        }
+        resourceFileDictionary![fileName] = filePath
+        
+        if let path = Bundle.main.path(forResource: "HiddenFiles", ofType: "plist") {
+            resourceFileDictionary?.removeObject(forKey: fileName)
+            do {
+                try resourceFileDictionary?.write(to: URL(fileURLWithPath: path))
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
     func GetPlistData(plist: NSString)  -> NSDictionary
     {
         var resourceFileDictionary: NSMutableDictionary?

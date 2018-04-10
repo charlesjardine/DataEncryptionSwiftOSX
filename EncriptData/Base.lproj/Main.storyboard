@@ -179,7 +179,7 @@
         <!--Show & Hide Files-->
         <scene sceneID="2si-qg-QZ6">
             <objects>
-                <viewController title="Show &amp; Hide Files" id="I1m-oq-gL2" sceneMemberID="viewController">
+                <viewController title="Show &amp; Hide Files" id="I1m-oq-gL2" customClass="ShowHideViewController" customModule="Data_Encription" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="7Dc-8U-mYe">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="230"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -194,7 +194,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="KFu-5x-RJJ" kind="popover" popoverAnchorView="aRS-em-y76" popoverBehavior="t" preferredEdge="maxY" id="wl0-Bd-0A3"/>
+                                    <action selector="btnShowlist:" target="I1m-oq-gL2" id="eWQ-V1-WAn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -205,8 +205,12 @@
                             <constraint firstItem="Lwp-NH-qf1" firstAttribute="leading" secondItem="7Dc-8U-mYe" secondAttribute="leading" constant="125" id="Oa6-JB-SC5"/>
                             <constraint firstItem="aRS-em-y76" firstAttribute="bottom" secondItem="Lwp-NH-qf1" secondAttribute="bottom" id="ggl-SE-zx3"/>
                             <constraint firstItem="Lwp-NH-qf1" firstAttribute="top" secondItem="7Dc-8U-mYe" secondAttribute="top" constant="20" symbolic="YES" id="icd-Wl-RuE"/>
+                            <constraint firstItem="aRS-em-y76" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7Dc-8U-mYe" secondAttribute="leading" constant="20" symbolic="YES" id="my9-Fj-prh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnShow" destination="aRS-em-y76" id="6WW-TT-Tch"/>
+                    </connections>
                 </viewController>
                 <customObject id="tgJ-kH-hZk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -215,7 +219,7 @@
         <!--Hidden Files Lookup View Controller-->
         <scene sceneID="pas-sm-yhv">
             <objects>
-                <viewController id="KFu-5x-RJJ" customClass="HiddenFilesLookupViewController" customModule="Data_Encription" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HiddenFilesLookupViewController" id="KFu-5x-RJJ" customClass="HiddenFilesLookupViewController" customModule="Data_Encription" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="xRC-9U-1Cg">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -223,7 +227,7 @@
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmX-B3-Nfp">
                                 <rect key="frame" x="20" y="35" width="415" height="245"/>
                                 <clipView key="contentView" id="3Jg-DM-kL1">
-                                    <rect key="frame" x="1" y="23" width="413" height="221"/>
+                                    <rect key="frame" x="1" y="0.0" width="413" height="244"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="firstColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="wgH-QG-8n8" id="dwe-ds-dID">
@@ -274,11 +278,23 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="C5p-ye-h0d">
+                                <rect key="frame" x="173" y="2" width="108" height="32"/>
+                                <buttonCell key="cell" type="push" title="Unhide File" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tIJ-GL-IJG">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="btnRestore:" target="KFu-5x-RJJ" id="v9t-T3-BFu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="dmX-B3-Nfp" firstAttribute="leading" secondItem="xRC-9U-1Cg" secondAttribute="leading" constant="20" symbolic="YES" id="836-3R-2Ef"/>
                             <constraint firstAttribute="trailing" secondItem="dmX-B3-Nfp" secondAttribute="trailing" constant="15" id="FXC-G7-xwi"/>
+                            <constraint firstItem="C5p-ye-h0d" firstAttribute="top" secondItem="dmX-B3-Nfp" secondAttribute="bottom" constant="5" id="IBN-NW-U2G"/>
                             <constraint firstItem="dmX-B3-Nfp" firstAttribute="top" secondItem="xRC-9U-1Cg" secondAttribute="top" constant="20" symbolic="YES" id="M65-88-nDr"/>
+                            <constraint firstItem="C5p-ye-h0d" firstAttribute="centerX" secondItem="dmX-B3-Nfp" secondAttribute="centerX" id="f1O-0D-3Kh"/>
                             <constraint firstAttribute="bottom" secondItem="dmX-B3-Nfp" secondAttribute="bottom" constant="35" id="vpi-Hi-FnE"/>
                         </constraints>
                     </view>
@@ -290,7 +306,7 @@
                 <customObject id="2E5-Hs-N89" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <arrayController objectClassName="HiddenFilesModel" id="7jZ-Qk-Qz9"/>
             </objects>
-            <point key="canvasLocation" x="1214" y="1219"/>
+            <point key="canvasLocation" x="1225" y="1147"/>
         </scene>
         <!--Encription View Controller-->
         <scene sceneID="qjk-w9-SSB">
@@ -504,6 +520,8 @@
                             <constraint firstItem="xFB-af-iNT" firstAttribute="baseline" secondItem="BtL-0Z-ryB" secondAttribute="baseline" id="POa-OL-b48"/>
                             <constraint firstAttribute="trailing" secondItem="BtL-0Z-ryB" secondAttribute="trailing" constant="20" id="Sdg-Tx-Kui"/>
                             <constraint firstAttribute="bottom" secondItem="BtL-0Z-ryB" secondAttribute="bottom" constant="20" id="XID-Jo-rlC"/>
+                            <constraint firstItem="BtL-0Z-ryB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="td6-yh-BRz" secondAttribute="leading" constant="20" symbolic="YES" id="d59-MS-n4o"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xFB-af-iNT" secondAttribute="trailing" constant="20" symbolic="YES" id="qbY-eJ-bXU"/>
                         </constraints>
                     </view>
                 </viewController>

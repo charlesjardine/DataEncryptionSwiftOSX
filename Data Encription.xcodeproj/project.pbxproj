@@ -28,6 +28,7 @@
 		ECD7D1ED207B3C8A00E0C6AC /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD7D1EC207B3C8A00E0C6AC /* MainController.swift */; };
 		ECD7D1EF207B470900E0C6AC /* EncryptMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD7D1EE207B470900E0C6AC /* EncryptMasterView.swift */; };
 		ECE0E80020765B0F0075DEAE /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE0E7FF20765B0F0075DEAE /* MimeType.swift */; };
+		ECE60122207D497600C1E69B /* ShowHideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE60121207D497600C1E69B /* ShowHideViewController.swift */; };
 		ECED59E720766FC30083EFAA /* DecryptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFFA8E42074C99F0027E0A9 /* DecryptView.swift */; };
 		ECFE8B11207AA8A2008C2D23 /* EncriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE8B10207AA8A2008C2D23 /* EncriptionViewController.swift */; };
 		ECFE8B13207ABD78008C2D23 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFE8B12207ABD78008C2D23 /* EventMonitor.swift */; };
@@ -67,6 +68,7 @@
 		ECD7D1EC207B3C8A00E0C6AC /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		ECD7D1EE207B470900E0C6AC /* EncryptMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptMasterView.swift; sourceTree = "<group>"; };
 		ECE0E7FF20765B0F0075DEAE /* MimeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
+		ECE60121207D497600C1E69B /* ShowHideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowHideViewController.swift; sourceTree = "<group>"; };
 		ECFE8B10207AA8A2008C2D23 /* EncriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncriptionViewController.swift; sourceTree = "<group>"; };
 		ECFE8B12207ABD78008C2D23 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		ECFFA8E22074C8FC0027E0A9 /* EncryptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptView.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				ECD7D1EC207B3C8A00E0C6AC /* MainController.swift */,
 				ECA49260207C67AA003C90F3 /* SettingsViewController.swift */,
 				ECB0B38A207CE367002735CD /* HiddenFilesLookupViewController.swift */,
+				ECE60121207D497600C1E69B /* ShowHideViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				ECA49261207C67AA003C90F3 /* SettingsViewController.swift in Sources */,
 				ECB0B387207CDCFE002735CD /* HiddenFilesPlist.swift in Sources */,
 				ECB0B383207CDAAA002735CD /* HiddenFilesModel.swift in Sources */,
+				ECE60122207D497600C1E69B /* ShowHideViewController.swift in Sources */,
 				ECE0E80020765B0F0075DEAE /* MimeType.swift in Sources */,
 				EC3BEEA02074C45D00E81DC9 /* AppDelegate.swift in Sources */,
 			);
