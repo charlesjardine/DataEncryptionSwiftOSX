@@ -30,12 +30,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         //Setup Menu Items
+        
         if let button = statusBarItem.button {
             button.image = NSImage(named: NSImage.Name(rawValue: "MenuBar"))
             button.action = #selector(toggleWindowMain(_:forEvent:))
         }
        
-        popover.contentViewController = EncriptionViewController.loadFromNib()
+        popover.contentViewController = MainController.loadFromNib()
+        
+        popover.contentViewController?.view.wantsLayer = true
+        popover.contentViewController?.view.layer?.backgroundColor = NSColor.black.cgColor
+        
+        popover.appearance = NSAppearance(named: NSAppearance.Name.vibrantLight) //NSAppearance.current
+        
 //        eventMonitor = EventMonitor(mask: [.leftMouseUp,.rightMouseUp], handler: {(event) -> () in
 //            if self.popover.isShown {
 //                self.closePopOver(event)
@@ -55,6 +62,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     {
         popover.performClose(sender)
        // eventMonitor?.stop()
+    }
+    
+    func closeApp(_ sender: Any?)
+    {
+        popover.performClose(sender)
+    
+        exit(0)
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {

@@ -53,7 +53,7 @@ class DecryptView: NSView {
     
     func AddBackGroundView()
     {
-        imageView = NSImageView(frame: CGRect(x:30,y:40,width:self.bounds.width-60,height:self.bounds.height-60));
+        imageView = NSImageView(frame: CGRect(x:30,y:20,width:self.bounds.width-60,height:self.bounds.height-60));
         imageView.removeFromSuperview()
         var image:NSImage!
         let name = NSImage.Name("dropfiles")
@@ -155,6 +155,9 @@ class DecryptView: NSView {
         
         isBusy = true;
         
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
+        appDelegate.closePopOver(self)
+        
         //GET YOUR FILE PATH !!!
         var saveFile = path 
         self.filePath = path
@@ -167,6 +170,7 @@ class DecryptView: NSView {
         {
             self.layer?.backgroundColor = NSColor.red.cgColor
             self.AddBackGroundView()
+            isBusy = false;
             return false
         }
         labelText = "Processing..."
@@ -214,6 +218,8 @@ class DecryptView: NSView {
                     {
                         bReturn = self.dialogOK(question: "Ok?", text: "Invalid Password")
                         bReturn = false;
+                       
+                        appDelegate.showPopOver(self)
                     }
                     self.labelText = "Drag Files Here to Decrypt"
                     self.AddLabel()

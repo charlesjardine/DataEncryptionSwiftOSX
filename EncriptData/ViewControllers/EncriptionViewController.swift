@@ -22,6 +22,6 @@ class EncriptionViewController: NSViewController {
     
     @IBAction func BtnClose(_ sender: NSButtonCell) {
        let appDelegate = NSApplication.shared.delegate as! AppDelegate
-       appDelegate.closePopOver(self)
+       appDelegate.closeApp(self)
     }
 }

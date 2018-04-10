@@ -95,9 +95,6 @@
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
                     </window>
-                    <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
-                    </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -110,47 +107,98 @@
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r1Z-Ze-Ptp">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                                <subviews>
-                                    <customView fixedFrame="YES" id="Q7d-72-VvY" customClass="EncryptView" customModule="Data_Encription" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="233" height="270"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </customView>
-                                    <customView fixedFrame="YES" id="Ofh-Oj-Nfb" customClass="DecryptView" customModule="Data_Encription" customModuleProvider="target">
-                                        <rect key="frame" x="243" y="0.0" width="237" height="270"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </customView>
-                                </subviews>
-                                <holdingPriorities>
-                                    <real value="250"/>
-                                    <real value="250"/>
-                                </holdingPriorities>
-                            </splitView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="r1Z-Ze-Ptp" secondAttribute="bottom" id="3MT-Q5-Sfe"/>
-                            <constraint firstAttribute="trailing" secondItem="r1Z-Ze-Ptp" secondAttribute="trailing" id="8T5-dg-F2c"/>
-                            <constraint firstItem="r1Z-Ze-Ptp" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="ekn-0Y-8fC"/>
-                            <constraint firstItem="r1Z-Ze-Ptp" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="jW1-XR-3RY"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
+        <!--Main Controller-->
+        <scene sceneID="0Lt-0f-rKu">
+            <objects>
+                <tabViewController storyboardIdentifier="MainController" selectedTabViewItemIndex="0" tabStyle="bottom" id="bn2-uO-58h" customClass="MainController" customModule="Data_Encription" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem identifier="" id="f0M-It-hmd"/>
+                        <tabViewItem identifier="" id="z3z-WR-3Ki"/>
+                        <tabViewItem id="mLG-MG-Yq2"/>
+                    </tabViewItems>
+                    <tabView key="tabView" type="noTabsNoBorder" id="jwA-fb-DsE">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="system"/>
+                        <connections>
+                            <outlet property="delegate" destination="bn2-uO-58h" id="2Ga-Y7-3eW"/>
+                        </connections>
+                    </tabView>
+                    <connections>
+                        <outlet property="tabView" destination="jwA-fb-DsE" id="uzJ-n9-oUq"/>
+                        <segue destination="NpN-bc-KII" kind="relationship" relationship="tabItems" id="ztK-Hc-FQf"/>
+                        <segue destination="I1m-oq-gL2" kind="relationship" relationship="tabItems" id="MhR-V5-jKP"/>
+                        <segue destination="PGf-7w-3VL" kind="relationship" relationship="tabItems" id="E3U-Xt-VDP"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="po4-KN-6iR" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="67" y="996"/>
+        </scene>
+        <!--Encript & Decript Files-->
+        <scene sceneID="MjA-h8-N2f">
+            <objects>
+                <viewController title="Encript &amp; Decript Files" id="NpN-bc-KII" sceneMemberID="viewController">
+                    <view key="view" id="o0c-FJ-rde" customClass="EncryptMasterView" customModule="Data_Encription" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="230"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="ScQ-O0-f41" customClass="EncryptView" customModule="Data_Encription" customModuleProvider="target">
+                                <rect key="frame" x="20" y="10" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="ZFa-FE-1ic"/>
+                                    <constraint firstAttribute="width" constant="200" id="cxR-Tu-Gmc"/>
+                                </constraints>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="oej-vO-1ph" customClass="DecryptView" customModule="Data_Encription" customModuleProvider="target">
+                                <rect key="frame" x="230" y="10" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="rUg-Fk-lPx"/>
+                                    <constraint firstAttribute="width" constant="200" id="xNd-M6-PQA"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="oej-vO-1ph" secondAttribute="trailing" constant="20" id="Flg-Pw-NmW"/>
+                            <constraint firstItem="oej-vO-1ph" firstAttribute="top" secondItem="o0c-FJ-rde" secondAttribute="top" constant="20" id="lWc-jd-j6C"/>
+                            <constraint firstItem="ScQ-O0-f41" firstAttribute="leading" secondItem="o0c-FJ-rde" secondAttribute="leading" constant="20" id="q9W-7N-iWR"/>
+                            <constraint firstItem="ScQ-O0-f41" firstAttribute="top" secondItem="o0c-FJ-rde" secondAttribute="top" constant="20" id="u6d-cC-veP"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="rpF-G1-Vrj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="737" y="810"/>
+        </scene>
+        <!--Show & Hide Files-->
+        <scene sceneID="2si-qg-QZ6">
+            <objects>
+                <viewController title="Show &amp; Hide Files" id="I1m-oq-gL2" sceneMemberID="viewController">
+                    <view key="view" id="7Dc-8U-mYe">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="tgJ-kH-hZk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="737" y="1182"/>
+        </scene>
         <!--Encription View Controller-->
         <scene sceneID="qjk-w9-SSB">
             <objects>
                 <viewController storyboardIdentifier="EncriptionViewController" id="yjt-us-PfU" customClass="EncriptionViewController" customModule="Data_Encription" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="3Jm-B8-C15">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="294"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uIl-Ro-N85">
-                                <rect key="frame" x="14" y="0.0" width="152" height="32"/>
+                                <rect key="frame" x="14" y="32" width="152" height="32"/>
                                 <buttonCell key="cell" type="push" title="Set File Extentions" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2aM-iT-c5r">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -159,17 +207,17 @@
                                     </connections>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="c2X-gO-IVk" kind="popover" popoverAnchorView="uIl-Ro-N85" popoverBehavior="t" preferredEdge="maxY" id="q83-9j-f8d"/>
+                                    <segue destination="c2X-gO-IVk" kind="sheet" id="q83-9j-f8d"/>
                                 </connections>
                             </button>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="on3-bN-yig" customClass="EncryptView" customModule="Data_Encription" customModuleProvider="target">
-                                <rect key="frame" x="20" y="80" width="200" height="200"/>
+                                <rect key="frame" x="20" y="80" width="200" height="194"/>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="Kf3-vQ-Lbe" customClass="DecryptView" customModule="Data_Encription" customModuleProvider="target">
-                                <rect key="frame" x="230" y="80" width="200" height="200"/>
+                                <rect key="frame" x="230" y="80" width="200" height="194"/>
                             </customView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="X2b-yb-YHO">
-                                <rect key="frame" x="361" y="0.0" width="75" height="32"/>
+                                <rect key="frame" x="361" y="32" width="75" height="32"/>
                                 <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AqU-7d-int">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -180,13 +228,15 @@
                             </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="X2b-yb-YHO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3Jm-B8-C15" secondAttribute="leading" constant="20" symbolic="YES" id="BdM-oj-S4h"/>
                             <constraint firstItem="Kf3-vQ-Lbe" firstAttribute="leading" secondItem="on3-bN-yig" secondAttribute="trailing" constant="10" id="INL-4h-sUO"/>
-                            <constraint firstItem="uIl-Ro-N85" firstAttribute="top" secondItem="on3-bN-yig" secondAttribute="bottom" constant="52" id="JXk-uC-GQF"/>
+                            <constraint firstItem="uIl-Ro-N85" firstAttribute="top" secondItem="on3-bN-yig" secondAttribute="bottom" constant="20" id="JXk-uC-GQF"/>
                             <constraint firstItem="on3-bN-yig" firstAttribute="top" secondItem="3Jm-B8-C15" secondAttribute="top" constant="20" symbolic="YES" id="OmB-II-t9e"/>
-                            <constraint firstItem="X2b-yb-YHO" firstAttribute="top" secondItem="Kf3-vQ-Lbe" secondAttribute="bottom" constant="52" id="PG3-GK-Avx"/>
+                            <constraint firstItem="X2b-yb-YHO" firstAttribute="top" secondItem="Kf3-vQ-Lbe" secondAttribute="bottom" constant="20" id="PG3-GK-Avx"/>
                             <constraint firstAttribute="bottom" secondItem="on3-bN-yig" secondAttribute="bottom" constant="80" id="VHi-kn-WCZ"/>
+                            <constraint firstAttribute="trailing" secondItem="uIl-Ro-N85" secondAttribute="trailing" constant="290" id="Ysf-wa-iDk"/>
                             <constraint firstItem="on3-bN-yig" firstAttribute="leading" secondItem="3Jm-B8-C15" secondAttribute="leading" constant="20" symbolic="YES" id="ah4-6Z-DwR"/>
-                            <constraint firstItem="uIl-Ro-N85" firstAttribute="leading" secondItem="3Jm-B8-C15" secondAttribute="leading" constant="20" id="fRj-qO-s1M"/>
+                            <constraint firstItem="uIl-Ro-N85" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3Jm-B8-C15" secondAttribute="leading" id="fRj-qO-s1M"/>
                             <constraint firstItem="X2b-yb-YHO" firstAttribute="trailing" secondItem="Kf3-vQ-Lbe" secondAttribute="trailing" id="nnj-MW-Enz"/>
                             <constraint firstItem="on3-bN-yig" firstAttribute="bottom" secondItem="Kf3-vQ-Lbe" secondAttribute="bottom" id="pOr-0X-YRY"/>
                             <constraint firstItem="Kf3-vQ-Lbe" firstAttribute="leading" secondItem="3Jm-B8-C15" secondAttribute="leading" constant="230" id="rme-ZF-EHm"/>
@@ -197,7 +247,7 @@
                 </viewController>
                 <customObject id="e28-48-P7N" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="573" y="928"/>
+            <point key="canvasLocation" x="1252" y="164"/>
         </scene>
         <!--Update Ext View Controller-->
         <scene sceneID="oUg-fr-X4P">
@@ -318,7 +368,45 @@
                 <customObject id="G9h-Qj-j0A" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <arrayController objectClassName="PlistData" id="u7u-Ij-9fV"/>
             </objects>
-            <point key="canvasLocation" x="682" y="343"/>
+            <point key="canvasLocation" x="1853" y="165"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="4ly-sg-aqF">
+            <objects>
+                <viewController title="Settings" id="PGf-7w-3VL" customClass="SettingsViewController" customModule="Data_Encription" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="td6-yh-BRz">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YV8-Gv-235">
+                                <rect key="frame" x="207" y="141" width="55" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Settings" id="Oxa-ae-rN0">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" red="1" green="0.4545702338" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BtL-0Z-ryB">
+                                <rect key="frame" x="299" y="13" width="137" height="32"/>
+                                <buttonCell key="cell" type="push" title="Quit Application" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IUi-2Z-UXG">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="btnQuit:" target="PGf-7w-3VL" id="gNV-ss-FtV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="BtL-0Z-ryB" secondAttribute="trailing" constant="20" id="Sdg-Tx-Kui"/>
+                            <constraint firstAttribute="bottom" secondItem="BtL-0Z-ryB" secondAttribute="bottom" constant="20" id="XID-Jo-rlC"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="KB9-m8-Ybg" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="737" y="1669"/>
         </scene>
     </scenes>
 </document>

@@ -52,7 +52,7 @@ class EncryptView: NSView {
     
     func AddBackGroundView()
     {
-        imageView = NSImageView(frame: CGRect(x:30,y:40,width:self.bounds.width-60,height:self.bounds.height-60));
+        imageView = NSImageView(frame: CGRect(x:30,y:20,width:self.bounds.width-60,height:self.bounds.height-60));
         imageView.removeFromSuperview()
         var image:NSImage!
         let name = NSImage.Name("dropfiles")
@@ -181,6 +181,9 @@ class EncryptView: NSView {
         }
         isBusy = true;
         
+        let appDelegate = NSApplication.shared.delegate as! AppDelegate
+        appDelegate.closePopOver(self)
+        
         //GET YOUR FILE PATH !!!
         let saveFile = path + ".enc"
         self.filePath = path
@@ -190,6 +193,7 @@ class EncryptView: NSView {
         {
             self.layer?.backgroundColor = NSColor.red.cgColor
             self.AddBackGroundView()
+            isBusy = false;
             return false
         }
         
@@ -207,7 +211,6 @@ class EncryptView: NSView {
                     ciphertext.append(encryptor.finalData())
                     
                     //let ciphertext = RNCryptor.encrypt(data: dataRead as Data, withPassword: password)
-                   
                     do {
                         try ciphertext.write(to:  URL(fileURLWithPath: saveFile))
                     } catch {
@@ -232,7 +235,6 @@ class EncryptView: NSView {
                 }
         }
         
-    
         return true
     }
     
